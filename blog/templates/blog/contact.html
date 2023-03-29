@@ -1,0 +1,79 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load crispy_forms_tags%}
+  <main id="main">
+    <section id="contact" class="contact mb-5">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h1 class="page-title">Contact us</h1>
+          </div>
+        </div>
+         {% if messages %}
+               
+                  {% for message in messages %}
+                  {% if message.tags %} {{ message.tags }}"{% endif %}>{{ message }}
+                  {% endfor %}
+                
+        {% endif %}
+        <div class="row gy-4">
+
+          <div class="col-md-4">
+            <div class="info-item">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <address>Mandera, Kenya</address>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-4">
+            <div class="info-item info-item-borders">
+              <i class="bi bi-phone"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+2547000000000">+254700000000</a></p>
+            </div>
+          </div><!-- End Info Item -->
+
+     <div class="col-md-4">
+      <form action="" method="post">
+        {% csrf_token %}
+       <div class="info-item">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@kaskazini.com</a></p>
+            </div>
+          </div><!-- End Info Item --> 
+
+     
+          <div class="row justify-content-center mt-5">
+
+            <div class="col-lg-12">
+              <h5 class="comment-title">Leave a Message</h5>
+              <div class="row">
+                <div class="col-lg-6 mb-3">
+                  <label for="comment-name">Name</label>
+                  {{form.name}}
+                </div>
+                <div class="col-lg-6 mb-3">
+                  <label for="comment-email">Email</label>
+                  {{form.email}}
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="comment-message">Message</label>
+
+                  {{form.message}}
+                </div>
+                <div class="col-12">
+                  <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+              </div>
+            </div>
+          </div><!-- End Comments Form -->
+    
+        </form>  
+    </section>
+
+  </main><!-- End #main -->
+  
+  {% endblock content%}
