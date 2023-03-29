@@ -139,7 +139,7 @@ STATIC_ROOT = os.path.join(BASE_DIR / 'staticfiles')
 MEDIA_ROOT = BASE_DIR / 'static/img'
 
 CKEDITOR_UPLOAD_PATH = 'content/ckeditor/'
-
+CSRF_TRUSTED_ORIGINS=['https://web-production-889a6.up.railway.app']
 
 
 # Default primary key field type
