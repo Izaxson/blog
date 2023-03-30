@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-{% load crispy_forms_tags%}
+{% load crispy_forms_tags %}
   <main id="main">
     <section id="contact" class="contact mb-5">
       <div class="container" data-aos="fade-up">
@@ -13,7 +13,9 @@
          {% if messages %}
                
                   {% for message in messages %}
-                  {% if message.tags %} {{ message.tags }}"{% endif %}>{{ message }}
+                    {% if message.tags %} 
+                      {{ message }}
+                    {% endif %}>
                   {% endfor %}
                 
         {% endif %}
@@ -53,16 +55,16 @@
               <div class="row">
                 <div class="col-lg-6 mb-3">
                   <label for="comment-name">Name</label>
-                  {{form.name}}
+                  <div class="col-md-6"> {{form.name}}</div>
                 </div>
                 <div class="col-lg-6 mb-3">
                   <label for="comment-email">Email</label>
-                  {{form.email}}
+                  <div class="col-md-6"> {{form.email}}</div>
                 </div>
                 <div class="col-12 mb-3">
                   <label for="comment-message">Message</label>
 
-                  {{form.message}}
+                  <div class="col-md-6"> {{form.message}}</div>
                 </div>
                 <div class="col-12">
                   <input type="submit" class="btn btn-primary" value="Submit">
